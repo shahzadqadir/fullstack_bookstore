@@ -1,0 +1,19 @@
+<!-- ~/automation/fullstack_bookstore/templates/books/book_detail.html -->
+
+{% extends 'books/base.html' %}
+
+{% block title %} Books List {% endblock title %}
+
+{% block content %}
+
+  <h4>Book Details</h4>
+  <strong>Title:</strong> {{ book.title }}<br>
+  <strong>Author: </strong> {{ book.author.name_first_name }} {{ book.author.last_name }}<br>
+  <strong>Description: </strong> {{ book.description }}<br>
+  <strong>Price: </strong> {{ book.price }}<br>
+
+  <br><br>
+  <a href="{% url 'book_delete' book.id %}">DELETE</a><br><br>
+  <a href="{% url 'book_update' book.id %}">UPDATE</a><br><br>
+
+{% endblock %}

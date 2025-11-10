@@ -1,0 +1,21 @@
+<!-- ~/automation/fullstack_bookstore/templates/books/index.html -->
+
+{% extends 'books/base.html' %}
+
+{% block title %}
+Bookstore
+{% endblock title %}
+
+{% block content %}
+
+  <h1>Your Bookstore</h1>
+  <h4>We Sell</h4>
+  <ul>
+    <li>Fiction</li>
+    <li>Non Fiction</li>
+    <li>Children Books</li>
+  </ul>
+
+  <a href="{% url 'books_list' %}">List of Books</a>
+
+{% endblock content %}
