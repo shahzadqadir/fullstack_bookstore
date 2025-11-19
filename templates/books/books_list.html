@@ -1,0 +1,13 @@
+<!-- ~/automation/fullstack_bookstore/templates/books/books_list.html -->
+
+{% extends 'books/base.html' %}
+
+{% block title %} Books List {% endblock title %}
+
+{% block content %}
+
+    {% for book in books %}
+        <strong><a href="{% url 'book_details' book.id %}">{{ book.title }}</a></strong> by {{ book.author }}<br>
+    {% endfor %}
+
+{% endblock %}

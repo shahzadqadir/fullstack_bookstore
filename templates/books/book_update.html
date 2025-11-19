@@ -1,0 +1,16 @@
+<!-- ~/automation/fullstack_bookstore/templates/books/book_update.html -->
+
+{% extends 'books/base.html' %}
+
+{% block title %} Update {{book.title}} {% endblock title %}
+
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">UPDATE</button>
+  </form>
+
+
+{% endblock %}
