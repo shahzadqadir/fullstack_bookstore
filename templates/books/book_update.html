@@ -1,16 +1,17 @@
 <!-- ~/automation/fullstack_bookstore/templates/books/book_update.html -->
 
 {% extends 'books/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %} Update {{book.title}} {% endblock title %}
 
 {% block content %}
-
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">UPDATE</button>
-  </form>
-
-
+  <div class="container mt-5">
+    <h4>Update Book Details</h4>      
+    <form method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="btn btn-warning" type="submit">UPDATE</button>
+    </form>
+  </div>
 {% endblock %}
